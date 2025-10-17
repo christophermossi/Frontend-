@@ -1,0 +1,135 @@
+/* Footer.css */
+
+.footer {
+  background: url('https://images.unsplash.com/photo-1600180758890-6b94519a8ba8')
+    center/cover no-repeat;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInFooter 1.2s ease;
+}
+
+.footer-overlay {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  padding: 60px 20px 20px;
+}
+
+/* Footer Container */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  animation: fadeUp 0.8s ease-in-out;
+}
+
+/* Logo & About */
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #f0e6d2, #b69b74);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.footer-about {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Sections */
+.footer-section h3 {
+  font-size: 1.2rem;
+  color: #e4c8b4;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 6px 0;
+}
+
+.footer-section ul li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #e4c8b4;
+}
+
+/* Contact */
+.footer-section p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* Social Icons */
+.footer-social {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social a {
+  color: white;
+  background: rgba(255,255,255,0.1);
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: #e4c8b4;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+  padding-top: 15px;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #ccc;
+  animation: fadeIn 1s ease;
+}
+
+/* Animations */
+@keyframes fadeInFooter {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-container {
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}

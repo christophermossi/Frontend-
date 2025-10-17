@@ -1,0 +1,109 @@
+/* Header.css */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 30px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #f0e6d2, #b69b74);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+/* Nav Links */
+.nav-links button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 500;
+  margin: 0 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links button:hover {
+  color: #e4c8b4;
+}
+
+/* Icon Group */
+.icon-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon-group button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.icon-group button:hover {
+  transform: scale(1.15);
+}
+
+/* Cart Count */
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #e4c8b4;
+  color: #000;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  background: rgba(30,30,30,0.95);
+  padding: 15px;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.mobile-nav button {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 1rem;
+  margin: 8px 0;
+  text-align: left;
+}
+
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

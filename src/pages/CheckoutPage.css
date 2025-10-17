@@ -1,0 +1,211 @@
+/* 🌿 Page Container */
+.checkout-container {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 3rem 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+.checkout-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ✨ Title */
+.checkout-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #111;
+}
+
+/* 📦 Layout Grid */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.checkout-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* 🧾 Card Box */
+.checkout-card {
+  background: white;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.checkout-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-card h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+/* 🧍 Input Fields */
+.checkout-card input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkout-card input:focus {
+  outline: none;
+  border-color: black;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Two Column Input */
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* 💳 Order Summary */
+.order-summary {
+  background: white;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  transition: all 0.3s ease;
+}
+
+.order-summary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.order-summary h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.summary-items {
+  margin-bottom: 1.5rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.summary-totals {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+/* 🖤 Complete Button */
+.complete-btn {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.complete-btn:hover {
+  background: #333;
+  transform: scale(1.03);
+}
+
+/* ✅ Order Complete Page */
+.order-complete {
+  background: white;
+  border-radius: 14px;
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+}
+
+.order-icon {
+  background: #22c55e;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.check-icon {
+  color: white;
+}
+
+.order-complete h1 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.thank-text {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.email-text {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary {
+    position: static;
+  }
+}
