@@ -35,7 +35,7 @@ const Home = ({ products, loading, favorites, toggleFavorite, addToCart }) => {
                 className="add-to-cart-btn"
               >
                 <ShoppingCart size={18} />
-                <span>Add to Cart</span>
+                <span>Add to Carts</span>
               </button>
             </div>
           </div>
