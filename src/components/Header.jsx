@@ -18,8 +18,9 @@ const Header = ({ setCurrentPage, cartCount, mobileMenuOpen, setMobileMenuOpen }
           {/* Desktop Navigation */}
           <nav className="nav-links">
             <button onClick={() => setCurrentPage("home")}>Home</button>
-            <button>Collections</button>
-            <button>About</button>
+            <button onClick={() => setCurrentPage("collections")}>Collections</button>
+            <button onClick={() => setCurrentPage("about")}>About</button>
+
           </nav>
 
           {/* Icons */}
@@ -58,8 +59,22 @@ const Header = ({ setCurrentPage, cartCount, mobileMenuOpen, setMobileMenuOpen }
             >
               Home
             </button>
-            <button>Collections</button>
-            <button>About</button>
+            <button
+              onClick={() => {
+                setCurrentPage("collections");
+                setMobileMenuOpen(false);
+              }}
+            >
+              Collections
+            </button>
+            <button
+              onClick={() => {
+                setCurrentPage("about");
+                setMobileMenuOpen(false);
+              }}
+            >
+              About
+            </button>
           </nav>
         )}
       </div>

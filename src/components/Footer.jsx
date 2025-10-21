@@ -34,7 +34,7 @@ const Footer = () => {
             <p>Email: info@laparfum.com</p>
             <div className="footer-social">
               <a href="#"><Facebook size={20} /></a>
-              <a href="#"><Instagram size={20} /></a>
+              <a href="https://www.instagram.com/theperfumeshop?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><Instagram size={20} /></a>
               <a href="#"><Twitter size={20} /></a>
               <a href="#"><Mail size={20} /></a>
             </div>

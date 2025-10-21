@@ -6,6 +6,8 @@ import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import Footer from './components/Footer';
 import LoginModal from './components/LoginModal';
+import CollectionsPage from './pages/CollectionsPage'; // ✅ make sure filename matches exactly
+import AboutPage from './pages/AboutPage'
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -21,7 +23,7 @@ const App = () => {
     firstName: '', lastName: '', email: '', phone: '', address: '', city: '', postalCode: ''
   });
 
-  const backendUrl = 'http://localhost:3000';
+  const backendUrl = 'https://backend-48ig.onrender.com';
 
   // Fetch products from backend
   useEffect(() => {
@@ -46,7 +48,6 @@ const App = () => {
           const res = await axios.get(`${backendUrl}/Cart`);
           const userCart = res.data.filter(item => item.email === userEmail);
 
-          // Map cart items to full product details
           const enrichedCart = await Promise.all(userCart.map(async (cartItem) => {
             const product = products.find(p => p._id.toString() === cartItem.productId.toString());
             if (!product) {
@@ -55,7 +56,7 @@ const App = () => {
                 id: cartItem._id.toString(),
                 name: 'Unknown Product',
                 price: 0,
-                image: '', // Or a default placeholder URL
+                image: '',
                 description: '',
                 quantity: cartItem.Quantity || 1
               };
@@ -63,9 +64,9 @@ const App = () => {
             return {
               id: cartItem._id.toString(),
               name: product.name || 'Unknown Product',
-              price: product.Price ?? 0, // Match MongoDB field name
-              image: product.ImageURL || '', // Match MongoDB field name
-              description: product.Description || '', // Match MongoDB field name
+              price: product.Price ?? 0,
+              image: product.ImageURL || '',
+              description: product.Description || '',
               quantity: cartItem.Quantity || 1
             };
           }));
@@ -104,7 +105,6 @@ const App = () => {
         });
       }
 
-      // Refresh cart
       const res = await axios.get(`${backendUrl}/Cart`);
       const userCart = res.data.filter(item => item.email === userEmail);
       const enrichedCart = await Promise.all(userCart.map(async (cartItem) => {
@@ -115,7 +115,7 @@ const App = () => {
             id: cartItem._id.toString(),
             name: 'Unknown Product',
             price: 0,
-            image: '', // Or a default placeholder URL
+            image: '',
             description: '',
             quantity: cartItem.Quantity || 1
           };
@@ -143,7 +143,6 @@ const App = () => {
         await axios.delete(`${backendUrl}/Cart/${productId}`);
       }
 
-      // Refresh cart
       const resUpdated = await axios.get(`${backendUrl}/Cart`);
       const userCart = resUpdated.data.filter(item => item.email === userEmail);
       const enrichedCart = await Promise.all(userCart.map(async (cartItem) => {
@@ -154,7 +153,7 @@ const App = () => {
             id: cartItem._id.toString(),
             name: 'Unknown Product',
             price: 0,
-            image: '', // Or a default placeholder URL
+            image: '',
             description: '',
             quantity: cartItem.Quantity || 1
           };
@@ -188,7 +187,6 @@ const App = () => {
         await axios.put(`${backendUrl}/Cart/${productId}`, { Quantity: newQuantity });
       }
 
-      // Refresh cart
       const resUpdated = await axios.get(`${backendUrl}/Cart`);
       const userCart = resUpdated.data.filter(item => item.email === userEmail);
       const enrichedCart = await Promise.all(userCart.map(async (cartItem) => {
@@ -199,7 +197,7 @@ const App = () => {
             id: cartItem._id.toString(),
             name: 'Unknown Product',
             price: 0,
-            image: '', // Or a default placeholder URL
+            image: '',
             description: '',
             quantity: cartItem.Quantity || 1
           };
@@ -223,7 +221,7 @@ const App = () => {
     setFavorites(prev => prev.includes(productId) ? prev.filter(id => id !== productId) : [...prev, productId]);
   };
 
-  const cartTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0); // Changed to item.price to match enriched data
+  const cartTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const handleCheckout = async () => {
@@ -240,7 +238,6 @@ const App = () => {
         shippingAddress: shippingInfo
       });
 
-      // Clear cart
       const res = await axios.get(`${backendUrl}/Cart`);
       const userCartItems = res.data.filter(i => i.email === userEmail);
       for (const item of userCartItems) {
@@ -280,6 +277,7 @@ const App = () => {
         onLogout={handleLogout}
         onOpenLogin={() => setShowLogin(true)}
       />
+
       {currentPage === 'home' && (
         <HomePage 
           products={products}
@@ -289,6 +287,11 @@ const App = () => {
           addToCart={addToCart}
         />
       )}
+
+      {currentPage === 'collections' && <CollectionsPage />} {/* ✅ Correctly placed */}
+      {currentPage === "about" && <AboutPage />}
+
+
       {currentPage === 'cart' && (
         <CartPage 
           cart={cart}
@@ -298,6 +301,7 @@ const App = () => {
           cartTotal={cartTotal}
         />
       )}
+
       {currentPage === 'checkout' && (
         <CheckoutPage 
           cart={cart}
@@ -308,6 +312,7 @@ const App = () => {
           setShippingInfo={setShippingInfo}
         />
       )}
+
       <Footer />
       <LoginModal
         show={showLogin}

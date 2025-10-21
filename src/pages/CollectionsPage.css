@@ -1,0 +1,92 @@
+.collections-page {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  padding: 80px 40px;
+  text-align: center;
+  color: #333;
+  min-height: 100vh;
+}
+
+.collections-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.collections-subtitle {
+  font-size: 1.1rem;
+  color: #777;
+  margin-bottom: 50px;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.perfume-card {
+  background: #fafafa;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.perfume-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.perfume-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.perfume-info {
+  padding: 20px;
+}
+
+.perfume-info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.perfume-info p {
+  color: #777;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.shop-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.shop-btn:hover {
+  background: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .collections-page {
+    padding: 60px 20px;
+  }
+
+  .perfume-image img {
+    height: 280px;
+  }
+}

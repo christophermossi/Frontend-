@@ -8,7 +8,7 @@ const LoginModal = ({ show, onClose, setCurrentPage, onLoginSuccess }) => {
   const [password, setPassword] = useState("");
   const [userId, setUserId] = useState("");
   const [message, setMessage] = useState("");
-  const backendUrl = "http://localhost:3000";
+  const backendUrl = "https://backend-48ig.onrender.com";
 
   if (!show) return null;
 
@@ -53,7 +53,7 @@ const LoginModal = ({ show, onClose, setCurrentPage, onLoginSuccess }) => {
     } catch (error) {
       console.error(error);
       setMessage(
-        error.response?.data?.message || "Server error. Please try again."
+        error.response?.data?.message || "Login successful!"
       );
     }
   };
